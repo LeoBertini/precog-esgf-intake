@@ -1,5 +1,5 @@
 ---
-title: "precog-esgf-intake: Automated discovery, validation, and optimized download management of Earth system model 
+title: "precog-esgf-intake: Automated discovery, validation, and optimised download management of Earth system model 
 data from Earth System Grid Federation nodes."
 tags:
   - Python
@@ -42,7 +42,7 @@ shortlisted Earth System Model data products.
 Modern Earth System science workflows frequently rely on climate-model data distributed across Earth System Grid
 Federation [(ESGF)](https://esgf.github.io/index.html) nodes [@ESGFAggregation]. For example, a Coupled Model
 Intercomparison Project (CMIP) analysis to constrain future projections in ocean carbon inventories requires
-standardized output of ocean biogeochemical variables (carbon, oxygen, nutrients) across many models and
+standardised output of ocean biogeochemical variables (carbon, oxygen, nutrients) across many models and
 experiments [@Wilson2022].
 These archived data are often distributed across many federated storage nodes, including duplicated,
 incomplete or corrupted versions. Although ESGF provides a federated infrastructure for searching and accessing these
