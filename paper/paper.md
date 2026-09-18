@@ -43,7 +43,7 @@ Modern Earth System science workflows frequently rely on climate-model data dist
 Federation [(ESGF)](https://esgf.github.io/index.html) nodes [@ESGFAggregation]. For example, a Coupled Model
 Intercomparison Project (CMIP) analysis to constrain future projections in ocean carbon inventories requires
 standardized output of ocean biogeochemical variables (carbon, oxygen, nutrients) across many models and
-experiments[@Wilson2022].
+experiments [@Wilson2022].
 These archived data are often distributed across many federated storage nodes, including duplicated,
 incomplete or corrupted versions. Although ESGF provides a federated infrastructure for searching and accessing these
 archives, practical research workflows often require additional automation to determine whether a given combination of
@@ -63,20 +63,19 @@ that satisfy compound criteria across experiments and variables. The software va
 consistency, and file availability across published ESGF archives before download. Users can export search results as
 tabular summaries, inspect and refine shortlisted datasets, and initiate batch downloads or trigger file integrity
 checks on locally assigned output paths. Retrieved data are then organised into a directory structure suitable for
-reproducible downstream analysis. This workflow is particularly useful when researchers need to screen many candidate
-models and variables before selecting datasets that are both scientifically appropriate and operationally accessible
+reproducible downstream analysis. This workflow (Figure 1) is particularly useful when researchers need to screen 
+many candidate models and variables before selecting datasets that are both scientifically appropriate and operationally accessible
 within their computational and storage constraints.
 
-Furthermore, by automating the retrieval and validation of CMIP grid metrics like `volcello` , `areacello` as default
+By automating the retrieval and validation of CMIP grid metrics like `volcello` , `areacello` as default
 (and enabling further bespoke searches for `deptho` or `thkcello` as a validated substitutes when
 `volcello` is unavailable) — `precog-esgf-intake` reduces the need for users to understand CMIP metadata and ESGF
 directory conventions. By wrapping ESGF discovery in a simple Python CLI and allowing users to tailor searches by
-editing a straightforward `search_criteria.toml` configuration file, the
+editing a straightforward [`search_criteria.toml`](https://github.com/precog-ocean/precog-esgf-intake/blob/main/scripts/search_criteria.toml) configuration file, the
 package supports both accessible default workflows and more bespoke dataset selection. This lowers the barrier for
-researchers
-new to CMIP while enabling experienced users to specify models, experiments, variables, frequencies, and other search
-constraints. Its lightweight design also supports terminal-based HPC workflows, allowing data discovery and ingestion
-from visualisation nodes and Jupyter sessions rather than interactive web portals or manual downloads.
+researchers new to CMIP while enabling experienced users to specify models, experiments, variables, frequencies, 
+and other search constraints. Its lightweight design also supports terminal-based HPC workflows, 
+allowing data discovery and ingestion from visualisation nodes and Jupyter sessions rather than interactive web portals or manual downloads.
 
 # State of the field
 
@@ -125,7 +124,7 @@ Rather than moving directly from catalogue search to cached download, the softwa
 shortlist generation, branch and grid validation, downloadability checks, and file retrieval into distinct command-line
 steps, allowing users to inspect and validate intermediate results before proceeding. 
 
-In a typical workflow (Figure 1), the user first edits a user-facing `search_criteria.toml` configuration file to define
+In a typical workflow (Figure 1), the user first edits a user-facing [`search_criteria.toml`](https://github.com/precog-ocean/precog-esgf-intake/blob/main/scripts/search_criteria.toml) configuration file to define
 the intended ESGF search criteria, including project, activity, experiment, frequency, variables (optional), and grid
 labels. This externalised configuration makes search intent easier to reproduce than editing hard-coded dictionaries in
 source code, while still allowing interactive entry of `variable_id` when that field is intentionally left
